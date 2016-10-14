@@ -15,9 +15,11 @@ describe('Services', function () {
     beforeEach(inject(function (_$httpBackend_, _Links_) {
       $httpBackend = _$httpBackend_;
       Links = _Links_;
+      console.log('_Links_', Links);
     }));
 
     it('should exist', function () {
+      console.log('links consoled', Links);
       expect(Links).to.exist;
     });
 
