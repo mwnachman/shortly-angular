@@ -4,8 +4,8 @@ angular.module('shortly.links', [])
   // Your code here
   $scope.data = {};
 
-  console.log('links get all', Links.getAll());
-  var blah = Links.getAll();
-  
-  console.log('this is blah', blah, blah.$$state);
+  Links.getAll()
+    .then(function(data) {
+      $scope.data.links = data;
+    });
 });
