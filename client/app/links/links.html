@@ -4,6 +4,13 @@
     <a href="#/signin">Sign Out</a>
   </nav>
   <body>
+    <div ng-controller='LinksController' np-init='checkAuth()'>
+      <ul>
+        <li ng-repeat='link in data.links | orderBy:"-visits"' ng-click='redirect(link.baseUrl + "/" + link.code)'>
+        {{link.baseUrl + '/' + link.code + ' ' + link.visits}}
+        </li>
+      </ul>
+    </div>
   </body>
-  <!-- Your html here -->
+
 </div>

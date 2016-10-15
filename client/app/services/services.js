@@ -25,9 +25,21 @@ angular.module('shortly.services', [])
     });
   };
 
+  var redirectShortly = function(code) {
+    return $http({
+      method: 'POST', 
+      url: '/:code',
+      data: {code : code}
+    })
+    .then(function(resp) {
+      return resp;
+    });
+  };
+
   return {
     getAll: getAll, 
-    addOne: addOne
+    addOne: addOne, 
+    redirectShortly: redirectShortly
   };
 })
 
@@ -39,6 +51,8 @@ angular.module('shortly.services', [])
   // that JWT is then stored in localStorage as 'com.shortly'
   // after you signin/signup open devtools, click resources,
   // then localStorage and you'll see your token from the server
+
+
   var signin = function (user) {
     return $http({
       method: 'POST',

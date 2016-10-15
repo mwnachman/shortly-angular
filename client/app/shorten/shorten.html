@@ -1,12 +1,16 @@
 <div id='container'>
 <!-- Your code here -->
+  <body ng-controller='ShortenController'>
   <nav>
     <a href="#/links">Links</a>
-    <a href="#/login">Log Out</a>
+    <a ng-click="signout()">
+      Log Out</a>
   </nav>
-  <body>
     <form>
-    <div ng-controller='ShortenController'>Insert Link in Here: <input ng-model='linkToShorten'/><button ng-click='addLink(linkToShorten)'>submit</button></div>
+    <div>Insert Link in Here: <input ng-model='linkToShorten' ng-keypress='isValid(linkToShorten)'/><button ng-click='addLink(linkToShorten); linkToShorten=""'>submit</button>
+      <span>{{isValidText}}
+      </span>
+    </div>
     </form>
   </body>
   <script href='../../lib/angular/angular.min.js'></script>

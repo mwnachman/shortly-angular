@@ -1,4 +1,4 @@
-var jwt = require('jwt-simple');
+var jwt = require('jwt-simple'); //jwt = json web tokens
 
 module.exports = {
   errorLogger: function (error, req, res, next) {
