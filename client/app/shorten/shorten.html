@@ -1,6 +1,15 @@
 <div id='container'>
 <!-- Your code here -->
-
+  <nav>
+    <a href="#/links">Links</a>
+    <a href="#/login">Log Out</a>
+  </nav>
+  <body>
+    <form>
+    <div ng-controller='ShortenController'>Insert Link in Here: <input ng-model='linkToShorten'/><button ng-click='addLink(linkToShorten)'>submit</button></div>
+    </form>
+  </body>
+  <script href='../../lib/angular/angular.min.js'></script>
 </div>
 
 
